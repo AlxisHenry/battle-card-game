@@ -1,0 +1,23 @@
+{
+  "name": "battle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "analyse": "vendor/bin/phpstan analyse --level=9 -c phpstan.neon",
+    "tests": "./vendor/bin/phpunit tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlxisHenry/battle-card-game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlxisHenry/battle-card-game/issues"
+  },
+  "homepage": "https://github.com/AlxisHenry/battle-card-game#readme"
+}

@@ -7,8 +7,8 @@
     "test": "tests"
   },
   "scripts": {
-    "analyse": "vendor/bin/phpstan analyse --level=9 -c phpstan.neon",
-    "tests": "./vendor/bin/phpunit tests/"
+    "phpstan": "vendor/bin/phpstan analyse --level=9 -c phpstan.neon",
+    "tests": "./vendor/bin/phpunit --testdox tests/"
   },
   "repository": {
     "type": "git",

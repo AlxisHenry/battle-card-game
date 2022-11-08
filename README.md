@@ -6,8 +6,7 @@
   <h1>Battle Card Game</h1>
   
   <p>
-	Inspired by @lardio
-  </p>
+	Inspired by <a href="https://github.com/lardio">@lardio</a>  </p>
 
 <a href="https://docs.alexishenry.eu"><strong>Getting Started »</strong></a>
 

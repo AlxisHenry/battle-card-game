@@ -5,7 +5,7 @@ declare(strict_types=1);
 class Card {
 
 	/**
-	 * @var array<string> SUITE
+	 * @var array<string> SUITS
 	 */
 	public const SUITS = [
 		'♠', 

@@ -56,9 +56,7 @@ class Game {
 		}
 		
 		Log::start();
-		Log::write('Game started');
 		$player->setPlayingStatus(true);
-
 	}
 
 	/**
@@ -124,7 +122,6 @@ class Game {
 
 	public function __destruct()
 	{
-		Log::write('Game ended');
 		Log::stop();
 	}
 

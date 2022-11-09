@@ -24,6 +24,7 @@
 # :notebook_with_decorative_cover: Summary
 
 - [About the project](#star2-about-the-project)
+  * [Games](#black_jocker-games)
   * [Techs](#space_invader-techs)
 - [Getting Started](#toolbox-getting-started)
   * [Requirements](#bangbang-requirements)
@@ -32,6 +33,8 @@
 - [Authors](#wave-authors)
 
 ## :star2: About the project
+
+### :black_joker: Games
 
 **Games of 2 or 4 players only**
 

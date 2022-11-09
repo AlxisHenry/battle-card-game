@@ -19,24 +19,19 @@ require_once 'src/functions.php';
  * Players
  */
 $players = [
-	'1' => new Player('John', 'john@example.com', 20, true),
-	'2' => new Player('Marie', 'marie@example.com', 22, false),
-	'3' => new Player('Jack', 'jack@example.com', 21, true),
-	'4' => new Player('Jane', 'jane@example.com', 19, false),
+	new Player('John', 'john@example.com', 20, true),
+	new Player('Marie', 'marie@example.com', 22, false),
+	new Player('Jack', 'jack@example.com', 21, true),
+	new Player('Jane', 'jane@example.com', 19, false),
 ];
 
-foreach ($players as $id => $player) {
+foreach ($players as $k => $player) {
 	echo "<pre>";
-	echo "<b>Player n°$id : </b>" . $player;
+	echo "<b>Player n°$k : </b>" . $player;
 	echo "</pre>";
 }
 
 /**
  * Games
  */
-$game = new Game([
-	$players[1],
-	$players[2],
-	$players[3],
-	$players[4]
-]);
+$game = new Game($players);

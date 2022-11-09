@@ -52,6 +52,9 @@
 
 ### :space_invader: Techs
 
+[![PHP][badge_php]][url_php]
+[![Vscode][badge_vsc]][url_vsc]
+
 ## :toolbox: Getting Started
 
 ### :bangbang: Requirements
@@ -92,3 +95,9 @@ npm run tests
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- BADGE LINKS -->
+[badge_php]: https://img.shields.io/badge/php%20-%23323330.svg?&style=for-the-badge&logo=php&logoColor=8b9ed6&color=grey
+[url_php]: https://www.php.net
+[badge_vsc]: https://img.shields.io/badge/vscode%20-hotpink.svg?&style=for-the-badge&logo=visualstudiocode&logoColor=white&color=blue
+[url_vsc]: https://code.visualstudio.com/

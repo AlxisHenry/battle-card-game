@@ -33,6 +33,22 @@
 
 ## :star2: About the project
 
+### Stages of the game
+
+**Games of 2 or 4 players only**
+
+0. *Equitable distribution of cards between players.*
+
+1. Each round, the players turn over a card, the strongest wins.
+
+2. The winning player places their played card and the opponent's card at the end of their deck.
+
+3. Battle: Each player places a card face down on the previous card, then plays a second card face up which will determine the winner. In the event of a tie, the process is repeated.
+
+4. If a player cannot play more than two cards in the event of a tie, then the card following the tie will decide the winner.
+
+5. If a player gets a tie and it's their last card then they lose.
+
 ### :space_invader: Techs
 
 ## :toolbox: Getting Started

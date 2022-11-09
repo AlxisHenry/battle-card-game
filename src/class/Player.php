@@ -20,9 +20,9 @@ class Player {
 	public static int $count = 0;
 
 	/**
-	 * @var bool $alreadyPlayed
+	 * @var bool $isPlaying
 	 */
-	private bool $alreadyPlaying = false;
+	private bool $isPlaying = false;
 	
 	/**
 	 * @param string $name
@@ -93,7 +93,7 @@ class Player {
 	 */
 	public function getPlayingStatus(): bool
 	{
-		return $this->alreadyPlaying;
+		return $this->isPlaying;
 	}
 
 	/**
@@ -149,9 +149,9 @@ class Player {
 	 * @param bool $status
 	 * @return void
 	 */
-	public function setPlayingStatus(bool $status): void
+	public function isPlaying(bool $status): void
 	{
-		$this->alreadyPlaying = $status;
+		$this->isPlaying = $status;
 	}
 
 	/**

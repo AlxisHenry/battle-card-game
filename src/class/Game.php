@@ -30,8 +30,8 @@ class Game {
 	public function __construct($players)
 	{
 		$this->requirements($players);
-		$this->cards = Card::shuffle();
-		Card::distribute($this->players, $this->cards);
+		Card::shuffle($this);
+		Card::distribute($this);
 	}
 
 	/**
@@ -42,21 +42,44 @@ class Game {
 	{
 		foreach ($players as $player) {
 			if (! $player instanceof Player) {
-				Log::write('Game requirements are not satisfied - invalid player given');
 				throw new Exception('Invalid player');
 			} else if ($player->getPlayingStatus()) {
-				Log::write('Game requirements are not satisfied - the given player already playing');
 				throw new Exception('Player already playing');
+			} else {
+				$player->isPlaying(true);
 			}
 		}
 
 		if (!(count($players) === 2 || count($players) === 4)) {
-			Log::write('Game requirements are not satisfied - invalid number of players');
 			throw new Exception('Invalid number of players. Please give 2 or 4 players');
 		}
 		
-		Log::start();
-		$player->setPlayingStatus(true);
+		$this->players = $players;
+
+	}
+	
+	/**
+	 * @return void
+	 */
+	private function start(): void
+	{
+
+	}
+
+	/**
+	 * @return void
+	 */
+	private function battle(): void
+	{
+		
+	}
+
+	/**
+	 * @return array<void>
+	 */
+	private function defineHighestCard(): array
+	{
+		return [];
 	}
 
 	/**
@@ -65,6 +88,14 @@ class Game {
 	public function getPlayers(): array
 	{
 		return $this->players;
+	}
+
+	/**
+	 * @return array<Card>
+	 */
+	public function getCards(): array
+	{
+		return $this->cards;
 	}
 
 	/**
@@ -84,10 +115,19 @@ class Game {
 	}
 
 	/**
+	 * @param array<Card> $cards
+	 * @return void
+	 */
+	public function setCards(array $cards): void
+	{
+		$this->cards = $cards;
+	}
+
+	/**
 	 * @param Player $winner
 	 * @return void
 	 */
-	public function setWinner(Player $winner): void
+	private function setWinner(Player $winner): void
 	{
 		$this->winner = $winner;
 	}
@@ -95,7 +135,7 @@ class Game {
 	/**
 	 * @return void
 	 */
-	public function nextRound(): void
+	private function nextRound(): void
 	{
 		$this->rounds++;
 	}
@@ -122,7 +162,7 @@ class Game {
 
 	public function __destruct()
 	{
-		Log::stop();
+		// Log::stop();
 	}
 
 }

@@ -18,7 +18,7 @@ class Card {
 	 * @var array<string> VALUES
 	 */
 	public const VALUES = [
-		'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'
+		'2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'
 	];
 
 	/**
@@ -31,9 +31,10 @@ class Card {
 	) {}
 
 	/**
-	 * @return array<Card>
+	 * @param Game $game
+	 * @return void
 	 */
-	public static function shuffle() : array
+	public static function shuffle(Game $game) : void
 	{	
 		$cards = [];
 		foreach (self::SUITS as $suit => $label) {
@@ -42,15 +43,17 @@ class Card {
 			}
 		}
 		shuffle($cards);
-		return $cards;
+		$game->setCards($cards);
 	}
 
 	/**
-	 * @param array<Player> $players
-	 * @param array<Card> $cards
+	 * @param Game $game
+	 * @return void
 	 */
-	public static function distribute($players, $cards): void
+	public static function distribute(Game $game): void
 	{
+		$players = $game->getPlayers();
+		$cards = $game->getCards();
 		foreach ($players as $i => $player) {
 			/** @var int $offset */
 			$offset = $i * (count($cards) / count($players));

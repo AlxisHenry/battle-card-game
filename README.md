@@ -33,8 +33,6 @@
 
 ## :star2: About the project
 
-### Stages of the game
-
 **Games of 2 or 4 players only**
 
 0. *Equitable distribution of cards between players.*

@@ -32,55 +32,92 @@ class Game {
 		$this->requirements($players);
 		Card::shuffle($this);
 		Card::distribute($this);
+		$this->start();
 	}
 
 	/**
-	 * @param array<Player> $players
+	 * Check if the game can start
+	 * 
+	 * @param array<Player> $players 
 	 * @return void
 	 */
 	private function requirements(array $players): void
 	{
+		/**
+		 * $players need to be an array of Player objects
+		 */
 		foreach ($players as $player) {
-			if (! $player instanceof Player) {
+			if (!($player instanceof Player))
 				throw new Exception('Invalid player');
-			} else if ($player->getPlayingStatus()) {
+			if ($player->getPlayingStatus())
 				throw new Exception('Player already playing');
-			} else {
-				$player->isPlaying(true);
-			}
+			/**
+			 * Set playing status of the player to true 
+			 */
+			$player->isPlaying(true);
 		}
 
-		if (!(count($players) === 2 || count($players) === 4)) {
+		/**
+		 * Game start only with 2 or 4 players
+		 */
+		if (!(count($players) === 2 || count($players) === 4)) 
 			throw new Exception('Invalid number of players. Please give 2 or 4 players');
-		}
 		
 		$this->players = $players;
 
 	}
 	
 	/**
+	 * Start the game
+	 * 
 	 * @return void
 	 */
 	private function start(): void
-	{
-
+	{	
+		/**
+		 * While no winner found, play a round
+		 */
+		while(!isset($this->winner))
+		{
+			$this->playRound();
+		}
 	}
+
+	/**
+	 * Play a round
+	 * 
+	 * @return void
+	 */
+	private function playRound(): void
+	{
+		/** Increment the number of rounds */
+		$this->rounds++;
+		/** Start the battle */
+		$this->battle();
+	}
+
+	/**
+	 * Do a battle between players
+	 * 
+	 * @return void
+	 */
+	private function battle(): void {}
+
+	/**
+	 * @param array<String> $cards
+	 * @return void
+	 */
+	private function checkForEquality(array $cards): void {}
 
 	/**
 	 * @return void
 	 */
-	private function battle(): void
-	{
-		
-	}
+	private function playedCards(): void {}
 
 	/**
-	 * @return array<void>
+	 * @return void
 	 */
-	private function defineHighestCard(): array
-	{
-		return [];
-	}
+	private function defineRoundWinner(): void {}
 
 	/**
 	 * @return array<Player>
@@ -133,14 +170,6 @@ class Game {
 	}
 
 	/**
-	 * @return void
-	 */
-	private function nextRound(): void
-	{
-		$this->rounds++;
-	}
-
-	/**
 	 * @return array<string>
 	 */
 	public function playersName(): array
@@ -162,7 +191,6 @@ class Game {
 
 	public function __destruct()
 	{
-		// Log::stop();
 	}
 
 }
